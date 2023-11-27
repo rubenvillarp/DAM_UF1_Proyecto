@@ -10,11 +10,13 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -59,10 +61,12 @@ fun GreetingPreview() {
 
 @Composable
 fun Home() {
+
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
         horizontalAlignment = Alignment.Start,
     ) {
+
         //TopBar
         Row(
             modifier = Modifier
@@ -88,55 +92,57 @@ fun Home() {
                 .height(70.dp)
                 .fillMaxSize()
         ) {
+            BottomAppBar(containerColor = Color.Gray) {
+                Button(
+                    onClick = { /*TODO*/ }, modifier = Modifier
+                        .width(70.dp)
+                        .height(70.dp)
+                        .weight(.5f)
+                        .fillMaxSize(),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                    shape = RectangleShape
+                ) {
+                    Text(text = "Noticias")
+                }
 
-            Button(
-                onClick = { /*TODO*/ }, modifier = Modifier
-                    .width(70.dp)
-                    .height(70.dp)
-                    .weight(.5f)
-                    .fillMaxSize(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                shape = RectangleShape
-            ) {
-                Text(text = "Noticias")
+                Button(
+                    onClick = { /*TODO*/ },
+                    modifier = Modifier
+                        .width(70.dp)
+                        .height(70.dp)
+                        .weight(.5f)
+                        .fillMaxSize(),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                    shape = RectangleShape
+                ) {
+                    Text(text = "Player")
+                }
+
+                Button(
+                    onClick = { /*TODO*/ }, modifier = Modifier
+                        .width(70.dp)
+                        .height(70.dp)
+                        .weight(.5f)
+                        .fillMaxSize(),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                    shape = RectangleShape
+                ) {
+                    Text(text = "Chat")
+                }
+
+                Button(
+                    onClick = { /*TODO*/ }, modifier = Modifier
+                        .width(70.dp)
+                        .height(70.dp)
+                        .weight(.5f)
+                        .fillMaxSize(),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
+                    shape = RectangleShape
+                ) {
+                    Text(text = "Podcast")
+                }
             }
 
-            Button(
-                onClick = { /*TODO*/ },
-                modifier = Modifier
-                    .width(70.dp)
-                    .height(70.dp)
-                    .weight(.5f)
-                    .fillMaxSize(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                shape = RectangleShape
-            ) {
-                Text(text = "Player")
-            }
-
-            Button(
-                onClick = { /*TODO*/ }, modifier = Modifier
-                    .width(70.dp)
-                    .height(70.dp)
-                    .weight(.5f)
-                    .fillMaxSize(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                shape = RectangleShape
-            ) {
-                Text(text = "Chat")
-            }
-
-            Button(
-                onClick = { /*TODO*/ }, modifier = Modifier
-                    .width(70.dp)
-                    .height(70.dp)
-                    .weight(.5f)
-                    .fillMaxSize(),
-                colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent),
-                shape = RectangleShape
-            ) {
-                Text(text = "Podcast")
-            }
         }
     }
 }
