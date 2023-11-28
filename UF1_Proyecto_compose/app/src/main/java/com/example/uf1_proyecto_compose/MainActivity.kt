@@ -1,18 +1,23 @@
 package com.example.uf1_proyecto_compose
 
 import android.os.Bundle
+import android.widget.ScrollView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -30,6 +35,10 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.uf1_proyecto_compose.ui.theme.UF1_Proyecto_composeTheme
 
 class MainActivity : ComponentActivity() {
@@ -42,7 +51,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Home()
+                    val navController= rememberNavController()
+                    NavHost(navController = navController , startDestination = "home") {
+                        composable("home") { Home(navController) }
+                        composable("player") { Player(navController) }
+                        /*...*/
+                    }
+                    //Home()
                 }
             }
         }
@@ -61,14 +76,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     UF1_Proyecto_composeTheme {
-        Home()
+        Home(navController = rememberNavController())
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Home() {
-
+fun Home(navController: NavController) {
 
     Column(
         verticalArrangement = Arrangement.spacedBy(0.dp, Alignment.CenterVertically),
@@ -86,13 +100,16 @@ fun Home() {
 
 
         }
+        Spacer(modifier = Modifier.height(30.dp))
         Row(
             modifier = Modifier
                 .background(Color.White)
                 .weight(1f)
                 .fillMaxSize()
+
         ) {
-            Column {
+
+            Column (modifier = Modifier.verticalScroll(rememberScrollState())){
                 Row(
                     modifier = Modifier
                         .height(190.dp)
@@ -113,6 +130,44 @@ fun Home() {
                 }
 
 
+
+                Row(
+                    modifier = Modifier
+                        .height(190.dp)
+                        .padding(24.dp, 16.dp, 24.dp, 0.dp)
+                        .fillMaxWidth()
+                        .align(CenterHorizontally)
+                ) {
+                    Row (modifier = Modifier
+                        .background(Color.Gray)
+                        .fillMaxSize()
+                        .padding(10.dp)
+                        , verticalAlignment = Alignment.Bottom
+                    ) {
+                        Text(text = "Title")
+
+
+                    }
+                }
+
+                Row(
+                    modifier = Modifier
+                        .height(190.dp)
+                        .padding(24.dp, 16.dp, 24.dp, 0.dp)
+                        .fillMaxWidth()
+                        .align(CenterHorizontally)
+                ) {
+                    Row (modifier = Modifier
+                        .background(Color.Gray)
+                        .fillMaxSize()
+                        .padding(10.dp)
+                        , verticalAlignment = Alignment.Bottom
+                    ) {
+                        Text(text = "Title")
+
+
+                    }
+                }
 
                 Row(
                     modifier = Modifier
@@ -158,7 +213,7 @@ fun Home() {
                 }
 
                 Button(
-                    onClick = { },
+                    onClick = { navController.navigate("player") },
                     modifier = Modifier
                         .width(70.dp)
                         .height(70.dp)
@@ -199,9 +254,13 @@ fun Home() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Player() {
+fun Player(navController: NavController) {
     Text(text = "Player")
+    Button(onClick = { navController.navigate("home")}) {
+        Text(text = "Back")
+    }
 }
 
 @Composable
