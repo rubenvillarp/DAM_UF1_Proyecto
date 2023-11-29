@@ -1,12 +1,9 @@
 package com.example.uf1_proyecto_compose
 
 import android.os.Bundle
-import android.widget.ScrollView
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -32,7 +29,6 @@ import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -51,11 +47,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController= rememberNavController()
-                    NavHost(navController = navController , startDestination = "home") {
+                    val navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "home") {
                         composable("home") { Home(navController) }
                         composable("player") { Player(navController) }
-                        /*...*/
+
                     }
                     //Home()
                 }
@@ -109,7 +105,7 @@ fun Home(navController: NavController) {
 
         ) {
 
-            Column (modifier = Modifier.verticalScroll(rememberScrollState())){
+            Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
                 Row(
                     modifier = Modifier
                         .height(190.dp)
@@ -117,11 +113,11 @@ fun Home(navController: NavController) {
                         .fillMaxWidth()
                         .align(CenterHorizontally)
                 ) {
-                    Row (modifier = Modifier
-                        .background(Color.Gray)
-                        .fillMaxSize()
-                        .padding(10.dp)
-                        , verticalAlignment = Alignment.Bottom
+                    Row(
+                        modifier = Modifier
+                            .background(Color.Gray)
+                            .fillMaxSize()
+                            .padding(10.dp), verticalAlignment = Alignment.Bottom
                     ) {
                         Text(text = "Title")
 
@@ -138,11 +134,11 @@ fun Home(navController: NavController) {
                         .fillMaxWidth()
                         .align(CenterHorizontally)
                 ) {
-                    Row (modifier = Modifier
-                        .background(Color.Gray)
-                        .fillMaxSize()
-                        .padding(10.dp)
-                        , verticalAlignment = Alignment.Bottom
+                    Row(
+                        modifier = Modifier
+                            .background(Color.Gray)
+                            .fillMaxSize()
+                            .padding(10.dp), verticalAlignment = Alignment.Bottom
                     ) {
                         Text(text = "Title")
 
@@ -157,11 +153,11 @@ fun Home(navController: NavController) {
                         .fillMaxWidth()
                         .align(CenterHorizontally)
                 ) {
-                    Row (modifier = Modifier
-                        .background(Color.Gray)
-                        .fillMaxSize()
-                        .padding(10.dp)
-                        , verticalAlignment = Alignment.Bottom
+                    Row(
+                        modifier = Modifier
+                            .background(Color.Gray)
+                            .fillMaxSize()
+                            .padding(10.dp), verticalAlignment = Alignment.Bottom
                     ) {
                         Text(text = "Title")
 
@@ -176,11 +172,11 @@ fun Home(navController: NavController) {
                         .fillMaxWidth()
                         .align(CenterHorizontally)
                 ) {
-                    Row (modifier = Modifier
-                        .background(Color.Gray)
-                        .fillMaxSize()
-                        .padding(10.dp)
-                        , verticalAlignment = Alignment.Bottom
+                    Row(
+                        modifier = Modifier
+                            .background(Color.Gray)
+                            .fillMaxSize()
+                            .padding(10.dp), verticalAlignment = Alignment.Bottom
                     ) {
                         Text(text = "Title")
 
@@ -258,7 +254,7 @@ fun Home(navController: NavController) {
 @Composable
 fun Player(navController: NavController) {
     Text(text = "Player")
-    Button(onClick = { navController.navigate("home")}) {
+    Button(onClick = { navController.navigate("home") }) {
         Text(text = "Back")
     }
 }
