@@ -6,6 +6,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavHostController
 import com.example.uf1_proyecto_compose.ui.navigation.BarDestination.News
 import com.example.uf1_proyecto_compose.ui.navigation.BarDestination.Player
@@ -19,7 +20,9 @@ fun BottomNavigation(
 ) {
     val menuItems = listOf(News, Player, Requests, Podcasts)
     BottomAppBar {
-        NavigationBar {
+        NavigationBar(
+            contentColor = Color.Red
+            ) {
             menuItems.forEach { item ->
                 val selected = currentRoute(navController) == item.route
                 NavigationBarItem(selected = selected,

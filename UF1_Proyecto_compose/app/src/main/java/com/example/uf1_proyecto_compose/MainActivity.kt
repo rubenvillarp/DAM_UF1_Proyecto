@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
 
 package com.example.uf1_proyecto_compose
 
@@ -22,6 +22,7 @@ import com.example.uf1_proyecto_compose.ui.theme.Theme
 
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -56,8 +57,12 @@ fun MainScreen() {
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize()
+
         ) {
             AppNavigation(navController = navController)
         }
+
     }
 }
+
+var playing = true

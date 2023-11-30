@@ -2,9 +2,11 @@ package com.example.uf1_proyecto_compose.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -28,7 +30,8 @@ fun PlayerBig() {
     Column(
         modifier = Modifier
             .height(300.dp)
-            .width(300.dp)
+            .fillMaxWidth()
+            .padding(horizontal = 32.dp)
             .background(color = Color.Gray, shape = RoundedCornerShape(16.dp)),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -36,8 +39,10 @@ fun PlayerBig() {
         Column(
             modifier = Modifier
                 .height(220.dp)
-                .width(268.dp)
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
                 .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp)),
+
         ) {
             Image(
                 imageVector = Icons.Outlined.PlayArrow, contentDescription = "",
@@ -47,7 +52,9 @@ fun PlayerBig() {
             )
         }
         Column(
-            modifier = Modifier.width(268.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             horizontalAlignment = Alignment.Start
         ) {
             Spacer(Modifier.size(8.dp))
@@ -57,11 +64,13 @@ fun PlayerBig() {
             Spacer(Modifier.size(2.dp))
         }
         //Progress Bar
-        Row(modifier = Modifier.width(268.dp), verticalAlignment = Alignment.CenterVertically) {
+        Row(modifier = Modifier.fillMaxWidth().padding(horizontal=16.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start) {
             Row(
                 modifier = Modifier
                     .height(8.dp)
-                    .width(200.dp)
+                    .width(220.dp)
                     .background(color = Color.DarkGray)
             ) {
             }
