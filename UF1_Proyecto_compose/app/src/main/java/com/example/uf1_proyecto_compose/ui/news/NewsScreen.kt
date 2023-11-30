@@ -8,10 +8,13 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,8 +42,17 @@ fun NewsScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Card (
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ){
+
+            }
             Column(
-                modifier = Modifier.background(Color.Gray)
+                modifier = Modifier
+                    .background(Color.Gray)
                     .width(300.dp)
                     .height(150.dp)
             ) {
@@ -48,7 +60,8 @@ fun NewsScreen() {
             }
             Spacer(Modifier.size(16.dp))
             Column(
-                modifier = Modifier.background(Color.Gray)
+                modifier = Modifier
+                    .background(Color.Gray)
                     .width(300.dp)
                     .height(150.dp)
             ) {
@@ -56,7 +69,8 @@ fun NewsScreen() {
             }
             Spacer(Modifier.size(16.dp))
             Column(
-                modifier = Modifier.background(Color.Gray)
+                modifier = Modifier
+                    .background(Color.Gray)
                     .width(300.dp)
                     .height(150.dp)
             ) {
@@ -64,7 +78,8 @@ fun NewsScreen() {
             }
             Spacer(Modifier.size(16.dp))
             Column(
-                modifier = Modifier.background(Color.Gray)
+                modifier = Modifier
+                    .background(Color.Gray)
                     .width(300.dp)
                     .height(150.dp)
             ) {
@@ -72,7 +87,8 @@ fun NewsScreen() {
             }
             Spacer(Modifier.size(16.dp))
             Column(
-                modifier = Modifier.background(Color.Gray)
+                modifier = Modifier
+                    .background(Color.Gray)
                     .width(300.dp)
                     .height(150.dp)
             ) {

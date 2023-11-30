@@ -38,7 +38,7 @@ fun PlayerBig() {
         Spacer(Modifier.size(16.dp))
         Column(
             modifier = Modifier
-                .height(220.dp)
+                .weight(1f)
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
                 .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp)),
@@ -58,9 +58,9 @@ fun PlayerBig() {
             horizontalAlignment = Alignment.Start
         ) {
             Spacer(Modifier.size(8.dp))
-            Text(text = "SONG’S TITLE / PROGRAM NAME GOES HERE", fontSize = 10.sp)
+            Text(text = "SONG’S TITLE / PROGRAM NAME GOES HERE", fontSize = 12.sp)
             Spacer(Modifier.size(2.dp))
-            Text(text = "Song’s artists / Radio DJ goes here", fontSize = 8.sp)
+            Text(text = "Song’s artists / Radio DJ goes here", fontSize = 10.sp)
             Spacer(Modifier.size(2.dp))
         }
         //Progress Bar
