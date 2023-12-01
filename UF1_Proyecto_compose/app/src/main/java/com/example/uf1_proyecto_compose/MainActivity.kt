@@ -1,4 +1,7 @@
-@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class)
+@file:OptIn(
+    ExperimentalMaterial3Api::class, ExperimentalMaterial3Api::class,
+    ExperimentalMaterial3Api::class
+)
 
 package com.example.uf1_proyecto_compose
 
@@ -16,6 +19,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
+import com.example.uf1_proyecto_compose.data.getNews
+import com.example.uf1_proyecto_compose.data.listaNoticias
 import com.example.uf1_proyecto_compose.ui.components.BottomNavigation
 import com.example.uf1_proyecto_compose.ui.navigation.AppNavigation
 import com.example.uf1_proyecto_compose.ui.theme.Theme
@@ -47,9 +52,11 @@ fun GreetingPreview() {
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
+    print(listaNoticias.size)
     Scaffold(bottomBar = {
         BottomNavigation(navController)
     }) { padding ->

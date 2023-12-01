@@ -29,11 +29,11 @@ import com.example.uf1_proyecto_compose.ui.theme.Theme
 
 @Composable
 fun NewsScreen() {
-    Column (
-        modifier= Modifier
+    Column(
+        modifier = Modifier
             .fillMaxSize()
 
-    ){
+    ) {
         Column(
             modifier = Modifier
                 .weight(1f)
@@ -42,12 +42,12 @@ fun NewsScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Card (
+            Card(
                 shape = RoundedCornerShape(8.dp),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
-            ){
+            ) {
 
             }
             Column(
@@ -97,9 +97,9 @@ fun NewsScreen() {
             Text(text = "News")
         }
         if (playing) {
-            Row (
+            Row(
 
-            ){
+            ) {
                 PlayerMini()
             }
 
