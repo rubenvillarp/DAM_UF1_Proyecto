@@ -43,7 +43,7 @@ fun PlayerBig() {
                 .padding(horizontal = 16.dp)
                 .background(color = Color.DarkGray, shape = RoundedCornerShape(16.dp)),
 
-        ) {
+            ) {
             Image(
                 imageVector = Icons.Outlined.PlayArrow, contentDescription = "",
                 modifier = Modifier
@@ -64,9 +64,13 @@ fun PlayerBig() {
             Spacer(Modifier.size(2.dp))
         }
         //Progress Bar
-        Row(modifier = Modifier.fillMaxWidth().padding(horizontal=16.dp),
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Start) {
+            horizontalArrangement = Arrangement.Start
+        ) {
             Row(
                 modifier = Modifier
                     .height(8.dp)

@@ -8,17 +8,19 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.uf1_proyecto_compose.ui.news.NewsScreen
+import com.example.uf1_proyecto_compose.ui.news.NewsScreenTest
+import com.example.uf1_proyecto_compose.ui.news.NewsViewModel
 import com.example.uf1_proyecto_compose.ui.player.PlayerScreen
 import com.example.uf1_proyecto_compose.ui.podcasts.PodcastsScreen
 import com.example.uf1_proyecto_compose.ui.requests.RequestsScreen
 
 @Composable
 fun AppNavigation(
-    navController: NavHostController
+    navController: NavHostController,
+    newsViewModel: NewsViewModel
 ) {
     NavHost(navController = navController, startDestination = NavScreen.News.name) {
-        composable(NavScreen.News.name) { NewsScreen() }
+        composable(NavScreen.News.name) { NewsScreenTest(newsViewModel) }
         composable(NavScreen.Player.name) { PlayerScreen() }
         composable(NavScreen.Requests.name) { RequestsScreen() }
         composable(NavScreen.Podcasts.name) { PodcastsScreen() }
