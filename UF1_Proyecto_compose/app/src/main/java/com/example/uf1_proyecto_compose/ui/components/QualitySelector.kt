@@ -15,7 +15,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import com.example.uf1_proyecto_compose.ui.utils.HIGH_QUALITY
+import com.example.uf1_proyecto_compose.ui.utils.LOW_QUALITY
+import com.example.uf1_proyecto_compose.ui.utils.MEDIUM_QUALITY
+import com.example.uf1_proyecto_compose.ui.utils.quality
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun qualitySelector() {
     val context = LocalContext.current
@@ -38,6 +43,7 @@ fun qualitySelector() {
                         "Low Selected",
                         Toast.LENGTH_SHORT
                     ).show()
+                    quality = LOW_QUALITY
                 })
             DropdownMenuItem(
                 text = { Text(text = "Medium") },
@@ -48,6 +54,7 @@ fun qualitySelector() {
                         "Medium Selected",
                         Toast.LENGTH_SHORT
                     ).show()
+                    quality = MEDIUM_QUALITY
                 })
             DropdownMenuItem(
                 text = { Text(text = "High") },
@@ -58,6 +65,7 @@ fun qualitySelector() {
                         "High Selected",
                         Toast.LENGTH_SHORT
                     ).show()
+                    quality = HIGH_QUALITY
                 })
         }
     }

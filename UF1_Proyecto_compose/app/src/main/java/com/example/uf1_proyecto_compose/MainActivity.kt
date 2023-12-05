@@ -19,6 +19,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModel
 import androidx.navigation.compose.rememberNavController
 import com.example.uf1_proyecto_compose.ui.components.BottomNavigation
 import com.example.uf1_proyecto_compose.ui.navigation.AppNavigation
@@ -27,7 +28,7 @@ import com.example.uf1_proyecto_compose.ui.theme.Theme
 
 
 class MainActivity : ComponentActivity() {
-    private val newsViewModel: NewsViewModel by viewModels()
+    private val viewModel: NewsViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -37,7 +38,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen(newsViewModel)
+                    MainScreen(viewModel)
                 }
             }
         }
@@ -54,7 +55,7 @@ fun GreetingPreview() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(
-    newsViewModel: NewsViewModel
+    viewModel: ViewModel
 ) {
     val navController = rememberNavController()
 
@@ -68,7 +69,7 @@ fun MainScreen(
                 .fillMaxSize()
 
         ) {
-            AppNavigation(navController = navController, newsViewModel = newsViewModel)
+            AppNavigation(navController = navController, viewModel = viewModel)
         }
     }
 }
