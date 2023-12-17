@@ -4,5 +4,6 @@ public enum NavScreen {
     News,
     Player,
     Requests,
-    Podcasts
+    Podcasts,
+    Article,
 }
