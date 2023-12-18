@@ -43,22 +43,8 @@ import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.example.uf1_proyecto_compose.data.Article
 import com.example.uf1_proyecto_compose.data.Author
-
-fun defaultArticle(): Article {
-    return Article(
-        author = Author("", "", ""),
-        authors = listOf(Author("", "", "")),
-        contentHtml = "",
-        contentText = "lkjhfkgfkjhsadgfkjshdgfkjasghdfkajsdhbfkjsdahbvkjabhds",
-        dateModified = "",
-        datePublished = "",
-        id = "",
-        image = "",
-        tags = listOf("1", "2"),
-        title = "No Content",
-        url = ""
-    )
-}
+import java.sql.Date
+import java.time.LocalDateTime
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

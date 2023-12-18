@@ -15,9 +15,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import com.example.uf1_proyecto_compose.R
 import com.example.uf1_proyecto_compose.ui.utils.HIGH_QUALITY
 import com.example.uf1_proyecto_compose.ui.utils.LOW_QUALITY
 import com.example.uf1_proyecto_compose.ui.utils.MEDIUM_QUALITY
+import com.example.uf1_proyecto_compose.ui.utils.RadioPlayerHelper
 import com.example.uf1_proyecto_compose.ui.utils.quality
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -26,46 +29,50 @@ fun qualitySelector() {
     val context = LocalContext.current
     var expanded by remember { mutableStateOf(false) }
     ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded }) {
-
+        var quality by remember { mutableStateOf(quality) }
+        quality = stringResource(id = R.string.select_quality)
         TextField(
-            value = "Selecciona la calidad",
+            value = quality,
             onValueChange = {},
             readOnly = true,
             modifier = Modifier.menuAnchor()
         )
         ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
             DropdownMenuItem(
-                text = { Text(text = "Low") },
+                text = { Text(text = stringResource(R.string.low)) },
                 onClick = {
                     expanded = false
                     Toast.makeText(
                         context,
-                        "Low Selected",
+                        R.string.low_selected,
                         Toast.LENGTH_SHORT
                     ).show()
                     quality = LOW_QUALITY
+                    RadioPlayerHelper.quality = LOW_QUALITY
                 })
             DropdownMenuItem(
-                text = { Text(text = "Medium") },
+                text = { Text(text = stringResource(R.string.medium)) },
                 onClick = {
                     expanded = false
                     Toast.makeText(
                         context,
-                        "Medium Selected",
+                        R.string.medium_selected,
                         Toast.LENGTH_SHORT
                     ).show()
                     quality = MEDIUM_QUALITY
+                    RadioPlayerHelper.quality = MEDIUM_QUALITY
                 })
             DropdownMenuItem(
-                text = { Text(text = "High") },
+                text = { Text(text = stringResource(R.string.high)) },
                 onClick = {
                     expanded = false
                     Toast.makeText(
                         context,
-                        "High Selected",
+                        R.string.high_selected,
                         Toast.LENGTH_SHORT
                     ).show()
                     quality = HIGH_QUALITY
+                    RadioPlayerHelper.quality = HIGH_QUALITY
                 })
         }
     }

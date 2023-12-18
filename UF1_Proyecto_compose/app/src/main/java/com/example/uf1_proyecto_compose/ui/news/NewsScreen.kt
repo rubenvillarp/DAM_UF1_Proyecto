@@ -14,8 +14,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.uf1_proyecto_compose.R
 import com.example.uf1_proyecto_compose.playing
 import com.example.uf1_proyecto_compose.ui.components.Article
 import com.example.uf1_proyecto_compose.ui.components.PlayerMini
@@ -30,16 +32,13 @@ fun NewsScreen(viewModel: NewsViewModel, navController: NavController) {
 
     Column {
         if (news == null) {
-            // Show loading indicator or placeholder
-            Text(text = "Loading...")
+            Text(text = stringResource(R.string.loading))
         } else {
-            // Display the list of credit cards
             val articles = news!!.items
 
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-
             ) {
                 Column(
                     modifier = Modifier
@@ -54,10 +53,7 @@ fun NewsScreen(viewModel: NewsViewModel, navController: NavController) {
                             )
                         }
                         items(articles) { article ->
-
                             Article(navController, article)
-
-
                             Divider(
                                 thickness = 32.dp,
                                 color = Color.Transparent

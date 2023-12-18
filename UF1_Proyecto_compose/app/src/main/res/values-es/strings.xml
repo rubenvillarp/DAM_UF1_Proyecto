@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NovaHit Radio</string>
+    <string name="select_quality">Slecciona una calidad</string>
+    <string name="song_title_big">TITULO DE LA CANCION / PROGRAMA</string>
+    <string name="song_title_mini">Titulo</string>
+    <string name="song_artist_mini">Artista</string>
+    <string name="song_artist_big">Los Artistas / Radio DJs</string>
+    <string name="low">Baja</string>
+    <string name="low_selected">Has seleccionado Baja</string>
+    <string name="medium_selected">Has seleccionado Media</string>
+    <string name="high_selected">Has seleccionado Alta</string>
+    <string name="news">Noticias</string>
+    <string name="loading">Cargando...</string>
+    <string name="high">Alta</string>
+    <string name="medium">Media</string>
+</resources>

@@ -51,7 +51,7 @@ fun RequestsScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(text = "Peticiones")
+
         }
         Column(
             modifier = Modifier
