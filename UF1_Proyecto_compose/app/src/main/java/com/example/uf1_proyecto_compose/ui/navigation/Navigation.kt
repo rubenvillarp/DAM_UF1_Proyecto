@@ -27,7 +27,7 @@ fun AppNavigation(
 ) {
     NavHost(navController = navController, startDestination = NavScreen.News.name) {
         composable(NavScreen.News.name) { NewsScreen(newsViewModel, navController) }
-        composable(NavScreen.Player.name) { PlayerScreen(PlayerViewModel()) }
+        composable(NavScreen.Player.name) { PlayerScreen() }
         composable(NavScreen.Requests.name) { RequestsScreen() }
         composable(NavScreen.Podcasts.name) { PodcastsScreen() }
         composable(

@@ -14,6 +14,7 @@ import com.example.uf1_proyecto_compose.ui.components.PlayerMini
 
 @Composable
 fun PodcastsScreen() {
+    //Not yet implemented
     Column(
         modifier = Modifier.fillMaxSize()
     ) {

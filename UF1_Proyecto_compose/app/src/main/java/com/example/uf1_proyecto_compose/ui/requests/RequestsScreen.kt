@@ -26,11 +26,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.uf1_proyecto_compose.R
 import com.example.uf1_proyecto_compose.playing
 import com.example.uf1_proyecto_compose.ui.components.PlayerMini
-import com.example.uf1_proyecto_compose.ui.theme.Theme
 
 
 var messages = mutableListOf<String>()
@@ -74,7 +74,7 @@ fun RequestsScreen() {
                         Icon(imageVector = Icons.Filled.Send, contentDescription = "Send")
                     }
                 },
-                label = { Text("Introduce tu mensaje") })
+                label = { Text(stringResource(R.string.enter_your_message)) })
         }
         if (playing) {
             Row(
@@ -84,14 +84,5 @@ fun RequestsScreen() {
             }
 
         }
-    }
-}
-
-@ExperimentalMaterial3Api
-@Preview(showBackground = true)
-@Composable
-fun RequestScreenPreview() {
-    Theme {
-        RequestsScreen()
     }
 }

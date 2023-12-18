@@ -12,25 +12,25 @@ sealed class BarDestination(
     val title: String,
     val route: String
 ) {
-    object News : BarDestination(
+    data object News : BarDestination(
         Icons.Filled.Newspaper,
         "Noticias",
         NavScreen.News.name
     )
 
-    object Player : BarDestination(
+    data object Player : BarDestination(
         Icons.Filled.PlayArrow,
         "Reproductor",
         NavScreen.Player.name
     )
 
-    object Requests : BarDestination(
+    data object Requests : BarDestination(
         Icons.Filled.Message,
         "Peticiones",
         NavScreen.Requests.name
     )
 
-    object Podcasts : BarDestination(
+    data object Podcasts : BarDestination(
         Icons.Filled.Podcasts,
         "Podcasts",
         NavScreen.Podcasts.name

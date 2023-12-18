@@ -19,11 +19,10 @@ import androidx.compose.ui.unit.dp
 import com.example.uf1_proyecto_compose.R
 import com.example.uf1_proyecto_compose.ui.components.PlayerBig
 import com.example.uf1_proyecto_compose.ui.components.QualitySelector
-import com.example.uf1_proyecto_compose.ui.utils.RadioPlayer
 
 @Composable
-fun PlayerScreen(viewModel: PlayerViewModel) {
-    val player = RadioPlayer()
+fun PlayerScreen() {
+
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Top,
