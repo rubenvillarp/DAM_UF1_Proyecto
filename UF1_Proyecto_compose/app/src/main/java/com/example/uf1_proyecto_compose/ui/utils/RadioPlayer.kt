@@ -15,7 +15,7 @@ private const val HQ_URL = "https://ro.novahit.net/listen/novahit/nh320.mp3"
 private const val DEFAULT_QUALITY = MEDIUM_QUALITY
 
 var play = false
-var quality = DEFAULT_QUALITY
+//var quality = DEFAULT_QUALITY
 
 class RadioPlayer : MediaPlayer() {
     fun play(context: Context, uri: Uri) {

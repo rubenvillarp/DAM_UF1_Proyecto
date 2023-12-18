@@ -18,7 +18,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.uf1_proyecto_compose.R
 import com.example.uf1_proyecto_compose.ui.components.PlayerBig
-import com.example.uf1_proyecto_compose.ui.components.qualitySelector
+import com.example.uf1_proyecto_compose.ui.components.QualitySelector
 import com.example.uf1_proyecto_compose.ui.utils.RadioPlayer
 
 @Composable
@@ -40,7 +40,7 @@ fun PlayerScreen(viewModel: PlayerViewModel) {
         )
         Spacer(modifier = Modifier.size(64.dp))
 
-        qualitySelector()
+        QualitySelector()
 
         Spacer(modifier = Modifier.weight(1f))
 

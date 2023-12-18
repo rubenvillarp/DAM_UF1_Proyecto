@@ -18,16 +18,18 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.example.uf1_proyecto_compose.R
 import com.example.uf1_proyecto_compose.ui.utils.RadioPlayerHelper
-import com.example.uf1_proyecto_compose.ui.utils.quality
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun qualitySelector() {
+fun QualitySelector() {
     val context = LocalContext.current
+    val selectQuality = stringResource(id = R.string.select_quality)
     var expanded by remember { mutableStateOf(false) }
+    var quality by remember { mutableStateOf(selectQuality) }
     ExposedDropdownMenuBox(expanded = expanded, onExpandedChange = { expanded = !expanded }) {
-        var quality by remember { mutableStateOf(quality) }
-        quality = stringResource(id = R.string.select_quality)
+        val low = stringResource(id = R.string.low)
+        val medium = stringResource(id = R.string.medium)
+        val high = stringResource(id = R.string.high)
         TextField(
             value = quality,
             onValueChange = {},
@@ -38,14 +40,14 @@ fun qualitySelector() {
             DropdownMenuItem(
                 text = { Text(text = stringResource(R.string.low)) },
                 onClick = {
-                    expanded = false
                     Toast.makeText(
                         context,
                         R.string.low_selected,
                         Toast.LENGTH_SHORT
                     ).show()
-                    quality = RadioPlayerHelper.LOW_QUALITY
+                    quality = low
                     RadioPlayerHelper.quality = RadioPlayerHelper.LOW_QUALITY
+                    expanded = false
                 })
             DropdownMenuItem(
                 text = { Text(text = stringResource(R.string.medium)) },
@@ -56,7 +58,7 @@ fun qualitySelector() {
                         R.string.medium_selected,
                         Toast.LENGTH_SHORT
                     ).show()
-                    quality = RadioPlayerHelper.MEDIUM_QUALITY
+                    quality = medium
                     RadioPlayerHelper.quality = RadioPlayerHelper.MEDIUM_QUALITY
                 })
             DropdownMenuItem(
@@ -68,9 +70,10 @@ fun qualitySelector() {
                         R.string.high_selected,
                         Toast.LENGTH_SHORT
                     ).show()
-                    quality = RadioPlayerHelper.HIGH_QUALITY
+                    quality = high
                     RadioPlayerHelper.quality = RadioPlayerHelper.HIGH_QUALITY
                 })
         }
+
     }
 }
