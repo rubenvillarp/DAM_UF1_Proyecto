@@ -17,9 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import com.example.uf1_proyecto_compose.R
-import com.example.uf1_proyecto_compose.ui.utils.HIGH_QUALITY
-import com.example.uf1_proyecto_compose.ui.utils.LOW_QUALITY
-import com.example.uf1_proyecto_compose.ui.utils.MEDIUM_QUALITY
 import com.example.uf1_proyecto_compose.ui.utils.RadioPlayerHelper
 import com.example.uf1_proyecto_compose.ui.utils.quality
 
@@ -47,8 +44,8 @@ fun qualitySelector() {
                         R.string.low_selected,
                         Toast.LENGTH_SHORT
                     ).show()
-                    quality = LOW_QUALITY
-                    RadioPlayerHelper.quality = LOW_QUALITY
+                    quality = RadioPlayerHelper.LOW_QUALITY
+                    RadioPlayerHelper.quality = RadioPlayerHelper.LOW_QUALITY
                 })
             DropdownMenuItem(
                 text = { Text(text = stringResource(R.string.medium)) },
@@ -59,8 +56,8 @@ fun qualitySelector() {
                         R.string.medium_selected,
                         Toast.LENGTH_SHORT
                     ).show()
-                    quality = MEDIUM_QUALITY
-                    RadioPlayerHelper.quality = MEDIUM_QUALITY
+                    quality = RadioPlayerHelper.MEDIUM_QUALITY
+                    RadioPlayerHelper.quality = RadioPlayerHelper.MEDIUM_QUALITY
                 })
             DropdownMenuItem(
                 text = { Text(text = stringResource(R.string.high)) },
@@ -71,8 +68,8 @@ fun qualitySelector() {
                         R.string.high_selected,
                         Toast.LENGTH_SHORT
                     ).show()
-                    quality = HIGH_QUALITY
-                    RadioPlayerHelper.quality = HIGH_QUALITY
+                    quality = RadioPlayerHelper.HIGH_QUALITY
+                    RadioPlayerHelper.quality = RadioPlayerHelper.HIGH_QUALITY
                 })
         }
     }
